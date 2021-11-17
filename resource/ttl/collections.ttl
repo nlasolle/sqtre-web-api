@@ -1,0 +1,501 @@
+@prefix o-time: <http://www.w3.org/2006/time#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix rel:   <http://purl.org/vocab/relationship/> .
+@prefix o-cnt: <http://www.w3.org/2011/content#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix bio:   <http://purl.org/vocab/bio/0.1/> .
+@prefix bibo:  <http://purl.org/ontology/bibo/> .
+@prefix ahpo:  <http://e-hp.ahp-numerique.fr/ahpo#> .
+@prefix o-module-mapping: <http://omeka.org/s/vocabs/module/mapping#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix exif:  <http://www.w3.org/2003/12/exif/ns#> .
+@prefix o:     <http://omeka.org/s/vocabs/o#> .
+
+<http://henripoincare.fr/api/resource_classes/966>
+        o:id    966 .
+
+<http://henripoincare.fr/api/users/2>
+        o:id    2 .
+
+<http://henripoincare.fr/api/item_sets/2>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:03:07+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           2 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=2> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Lieux d’archives" ;
+        dcterms:title  "Lieux d’archives" .
+
+<http://henripoincare.fr/api/item_sets/23>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:10:01+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           23 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=23> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Thèses" ;
+        dcterms:title  "Thèses" .
+
+<http://henripoincare.fr/api/item_sets/16104>
+        a                    o:ItemSet ;
+        o:created            "2019-05-24T12:50:56+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id                 16104 ;
+        o:is_open            false ;
+        o:is_public          true ;
+        o:items              <http://henripoincare.fr/api/items?item_set_id=16104> ;
+        o:modified           "2019-08-28T16:07:59+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner              <http://henripoincare.fr/api/users/2> ;
+        o:title              "E-Documents d'exposition" ;
+        dcterms:description  "Documents de l'exposition 2012." ;
+        dcterms:title        "E-Documents d'exposition" .
+
+<http://henripoincare.fr/api/item_sets/12438>
+        a                    o:ItemSet ;
+        o:created            "2018-10-22T14:42:44+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id                 12438 ;
+        o:is_open            true ;
+        o:is_public          true ;
+        o:items              <http://henripoincare.fr/api/items?item_set_id=12438> ;
+        o:modified           "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner              <http://henripoincare.fr/api/users/11> ;
+        o:title              "Lexique d’argot polytechnicien" ;
+        dcterms:creator      "Laurent Rollet" ;
+        dcterms:description  "Dès son arrivée à l’École polytechnique, Poincaré ponctue ses lettres de mots empruntés à l’argot des élèves. Loin d’être exhaustif, le présent dictionnaire vise à faciliter la compréhension de certains passages de ses échanges avec ses parents. Il s’appuie principalement sur l’ouvrage de Georges Pinet et Albert Lévy, L’argot de l’X, illustré par les X [G. PINET & A. LÉVY 1894]. Certains termes issus de l’argot commun du 19e siècle ainsi que certaines expressions devenues peu courantes aujourd’hui ont été ajoutés à ce lexique. Lorsque c’était nécessaire à la compréhension immédiate des lettres, certaines entrées de ce lexique ont été dédoublées\r\net apparaissent dans les notes accompagnant les lettres." ;
+        dcterms:title        "Lexique d’argot polytechnicien" .
+
+<http://henripoincare.fr/api/item_sets/12658>
+        a                    o:ItemSet ;
+        o:created            "2018-10-31T13:02:50+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id                 12658 ;
+        o:is_open            true ;
+        o:is_public          true ;
+        o:items              <http://henripoincare.fr/api/items?item_set_id=12658> ;
+        o:modified           "2018-10-31T13:02:57+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner              <http://henripoincare.fr/api/users/1> ;
+        o:title              "Bibliographie secondaire" ;
+        dcterms:description  "La bibliographie citée dans l'apparat critique de la correspondance." ;
+        dcterms:title        "Bibliographie secondaire" .
+
+<http://henripoincare.fr/api/item_sets/7>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:04:43+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           7 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=7> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Lieux d’expédition des lettres" ;
+        dcterms:title  "Lieux d’expédition des lettres" .
+
+<http://henripoincare.fr/api/item_sets/12432>
+        a                 ahpo:Person , o:ItemSet ;
+        o:created         "2018-10-22T12:59:26+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id              12432 ;
+        o:is_open         true ;
+        o:is_public       true ;
+        o:items           <http://henripoincare.fr/api/items?item_set_id=12432> ;
+        o:modified        "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner           <http://henripoincare.fr/api/users/11> ;
+        o:resource_class  <http://henripoincare.fr/api/resource_classes/959> ;
+        o:title           "Personnes citées dans la correspondance" ;
+        dcterms:title     "Personnes citées dans la correspondance" .
+
+<http://henripoincare.fr/api/item_sets/15>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:07:29+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           15 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=15> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Revues ayant publié Poincaré" ;
+        dcterms:title  "Revues ayant publié Poincaré" .
+
+<http://henripoincare.fr/api/users/1>
+        o:id    1 .
+
+<http://henripoincare.fr/api/item_sets/1>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:02:30+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           1 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=1> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Adresses des lieux d’archives" ;
+        dcterms:title  "Adresses des lieux d’archives" .
+
+<http://henripoincare.fr/api/resource_templates/1>
+        o:id    1 .
+
+<http://henripoincare.fr/api/item_sets/22>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:09:40+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           22 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=22> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Auteurs de rapports de thèse" ;
+        dcterms:title  "Auteurs de rapports de thèse" .
+
+<http://henripoincare.fr/api/item_sets/16103>
+        a                    o:ItemSet ;
+        o:created            "2019-05-24T12:50:56+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id                 16103 ;
+        o:is_open            false ;
+        o:is_public          true ;
+        o:items              <http://henripoincare.fr/api/items?item_set_id=16103> ;
+        o:modified           "2019-09-06T07:52:42+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner              <http://henripoincare.fr/api/users/2> ;
+        o:title              "D-Biographies, études poincaréennes" ;
+        dcterms:description  "Monographies, articles de revues, conférences, relatifs à la biographie ou à des études en relation avec Poincaré." ;
+        dcterms:title        "D-Biographies, études poincaréennes" .
+
+<http://henripoincare.fr/api/item_sets/6>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:04:24+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           6 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=6> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Lieux de destination des lettres" ;
+        dcterms:title  "Lieux de destination des lettres" .
+
+<http://henripoincare.fr/api/item_sets/14>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:07:12+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           14 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=14> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Éditeurs des publications de Poincaré" ;
+        dcterms:title  "Éditeurs des publications de Poincaré" .
+
+<http://henripoincare.fr/api/item_sets/17489>
+        a              o:ItemSet ;
+        o:created      "2019-11-19T08:37:02+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           17489 ;
+        o:is_open      false ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=17489> ;
+        o:modified     "2019-11-19T08:37:02+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/11> ;
+        o:title        "Documents à compléter" ;
+        dcterms:title  "Documents à compléter" .
+
+<http://henripoincare.fr/api/item_sets/21>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:09:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           21 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=21> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Doctorants" ;
+        dcterms:title  "Doctorants" .
+
+<http://henripoincare.fr/api/item_sets/15807>
+        a              o:ItemSet ;
+        o:created      "2019-04-16T08:23:23+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           15807 ;
+        o:is_open      false ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=15807> ;
+        o:modified     "2019-04-16T08:23:23+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/11> ;
+        o:title        "Doublon" ;
+        dcterms:title  "Doublon" .
+
+<http://henripoincare.fr/api/item_sets/12423>
+        a              o:ItemSet ;
+        o:created      "2018-07-16T21:48:16+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           12423 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=12423> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Publications de Henri Poincaré" ;
+        dcterms:title  "Publications de Henri Poincaré" .
+
+<http://henripoincare.fr/api/item_sets/16102>
+        a                    o:ItemSet ;
+        o:created            "2019-05-24T12:50:56+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id                 16102 ;
+        o:is_open            false ;
+        o:is_public          true ;
+        o:items              <http://henripoincare.fr/api/items?item_set_id=16102> ;
+        o:modified           "2019-08-29T08:13:57+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner              <http://henripoincare.fr/api/users/2> ;
+        o:resource_template  <http://henripoincare.fr/api/resource_templates/1> ;
+        o:title              "C-Vidéos, sites web" ;
+        dcterms:description  "Documentaires et conférences filmées en vidéo, sites web dédiés." ;
+        dcterms:title        "C-Vidéos, sites web" .
+
+<http://henripoincare.fr/api/item_sets/19>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:08:41+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           19 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=19> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Articles de Poincaré" ;
+        dcterms:title  "Articles de Poincaré" .
+
+<http://henripoincare.fr/api/item_sets/13>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:06:44+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           13 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=13> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Adresses des éditeurs" ;
+        dcterms:title  "Adresses des éditeurs" .
+
+<http://henripoincare.fr/api/item_sets/20>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:09:03+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           20 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=20> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Commentaires de l’édition de la correspondance" ;
+        dcterms:title  "Commentaires de l’édition de la correspondance" .
+
+<http://henripoincare.fr/api/item_sets/16101>
+        a                    o:ItemSet ;
+        o:created            "2019-05-24T12:50:55+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id                 16101 ;
+        o:is_open            false ;
+        o:is_public          true ;
+        o:items              <http://henripoincare.fr/api/items?item_set_id=16101> ;
+        o:modified           "2019-08-28T15:54:35+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner              <http://henripoincare.fr/api/users/2> ;
+        o:title              "B-Photographies" ;
+        dcterms:description  "Portraits et photographies de groupes. Relations familiales et professionnelles" ;
+        dcterms:title        "B-Photographies" .
+
+<http://henripoincare.fr/api/item_sets/18>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:08:24+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           18 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=18> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Ouvrages de Poincaré" ;
+        dcterms:title  "Ouvrages de Poincaré" .
+
+<http://henripoincare.fr/api/item_sets/4>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:03:50+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           4 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=4> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Chapitres de la correspondance" ;
+        dcterms:title  "Chapitres de la correspondance" .
+
+<http://henripoincare.fr/api/item_sets/12>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:06:21+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           12 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=12> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Rédacteurs de publications" ;
+        dcterms:title  "Rédacteurs de publications" .
+
+<http://henripoincare.fr/api/item_sets/17333>
+        a              o:ItemSet ;
+        o:created      "2019-09-13T11:55:23+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           17333 ;
+        o:is_open      false ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=17333> ;
+        o:modified     "2019-09-13T11:55:23+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/11> ;
+        o:title        "Rapports et résumés Tome 3" ;
+        dcterms:title  "Rapports et résumés Tome 3" .
+
+<http://henripoincare.fr/api/users/9>
+        o:id    9 .
+
+<http://henripoincare.fr/api/item_sets/16100>
+        a                    o:ItemSet ;
+        o:created            "2019-05-24T12:50:54+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id                 16100 ;
+        o:is_open            false ;
+        o:is_public          true ;
+        o:items              <http://henripoincare.fr/api/items?item_set_id=16100> ;
+        o:modified           "2019-08-28T16:09:12+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner              <http://henripoincare.fr/api/users/2> ;
+        o:title              "A-Documents d'archives" ;
+        dcterms:description  "Documents divers, diplômes et papiers" ;
+        dcterms:title        "A-Documents d'archives" .
+
+<http://henripoincare.fr/api/item_sets/9>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:05:25+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           9 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=9> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Correspondance" ;
+        dcterms:title  "Correspondance" .
+
+<http://henripoincare.fr/api/item_sets/12588>
+        a                 o:ItemSet , ahpo:Place ;
+        o:created         "2018-10-29T13:15:19+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id              12588 ;
+        o:is_open         false ;
+        o:is_public       true ;
+        o:items           <http://henripoincare.fr/api/items?item_set_id=12588> ;
+        o:modified        "2018-10-29T13:15:19+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner           <http://henripoincare.fr/api/users/11> ;
+        o:resource_class  <http://henripoincare.fr/api/resource_classes/966> ;
+        o:title           "Lieux cités dans la correspondance" ;
+        dcterms:title     "Lieux cités dans la correspondance" .
+
+<http://henripoincare.fr/api/item_sets/14481>
+        a                 o:ItemSet , ahpo:Person ;
+        o:created         "2018-11-14T08:50:58+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id              14481 ;
+        o:is_open         false ;
+        o:is_public       true ;
+        o:items           <http://henripoincare.fr/api/items?item_set_id=14481> ;
+        o:modified        "2019-01-23T09:07:26+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner           <http://henripoincare.fr/api/users/11> ;
+        o:resource_class  <http://henripoincare.fr/api/resource_classes/959> ;
+        o:title           "Personnes citées dans l'apparat critique" ;
+        dcterms:title     "Personnes citées dans l'apparat critique" .
+
+<http://henripoincare.fr/api/item_sets/15467>
+        a              o:ItemSet ;
+        o:created      "2019-03-18T13:06:23+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           15467 ;
+        o:is_open      false ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=15467> ;
+        o:modified     "2019-03-18T13:06:23+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/11> ;
+        o:title        "Éditeurs" ;
+        dcterms:title  "Éditeurs" .
+
+<http://henripoincare.fr/api/item_sets/3>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:03:31+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           3 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=3> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Volumes de la correspondance" ;
+        dcterms:title  "Volumes de la correspondance" .
+
+<http://henripoincare.fr/api/item_sets/11>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:06:03+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           11 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=11> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Auteurs de publications" ;
+        dcterms:title  "Auteurs de publications" .
+
+<http://henripoincare.fr/api/item_sets/15200>
+        a              o:ItemSet ;
+        o:created      "2019-01-31T08:47:31+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           15200 ;
+        o:is_open      false ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=15200> ;
+        o:modified     "2019-01-31T08:47:31+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/11> ;
+        o:title        "Œuvres citées dans la correspondance" ;
+        dcterms:title  "Œuvres citées dans la correspondance" .
+
+<http://henripoincare.fr/api/item_sets/24>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:10:23+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           24 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=24> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Rapports de thèse" ;
+        dcterms:title  "Rapports de thèse" .
+
+<http://henripoincare.fr/api/resource_classes/959>
+        o:id    959 .
+
+<http://henripoincare.fr/api/users/11>
+        o:id    11 .
+
+<http://henripoincare.fr/api/item_sets/8>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:05:04+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           8 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=8> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Correspondants d’Henri Poincaré" ;
+        dcterms:title  "Correspondants d’Henri Poincaré" .
+
+<http://henripoincare.fr/api/item_sets/15387>
+        a              o:ItemSet ;
+        o:created      "2019-03-04T13:46:36+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           15387 ;
+        o:is_open      false ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=15387> ;
+        o:modified     "2019-03-04T13:46:36+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/11> ;
+        o:title        "Photographies et gravures" ;
+        dcterms:title  "Photographies et gravures" .
+
+<http://henripoincare.fr/api/item_sets/16>
+        a              o:ItemSet ;
+        o:created      "2018-07-15T19:07:48+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:id           16 ;
+        o:is_open      true ;
+        o:is_public    true ;
+        o:items        <http://henripoincare.fr/api/items?item_set_id=16> ;
+        o:modified     "2018-10-22T15:16:20+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        o:owner        <http://henripoincare.fr/api/users/9> ;
+        o:title        "Collections des ouvrages de Poincaré" ;
+        dcterms:title  "Collections des ouvrages de Poincaré" .

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name = "RTRules" type="rootElement"/>
+
+<xs:complexType name="rootElement">
+  <xs:sequence>
+       <xs:element name = "prefixes" type="prefixList"  minOccurs ="0" maxOccurs="1"/>
+       <xs:element name= "rules" type="ruleList"  maxOccurs="1"/>
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="prefixList">
+ <xs:sequence>
+   <xs:element name="prefix" type="prefixType"  minOccurs ="0" maxOccurs="unbounded"/>
+ </xs:sequence>
+</xs:complexType >
+
+<xs:complexType name="ruleList">
+ <xs:sequence>
+   <xs:element name="rule" type="ruleType"  minOccurs ="1" maxOccurs="unbounded"/>
+ </xs:sequence>
+</xs:complexType >
+
+<xs:complexType name="prefixType">
+   <xs:attribute name="name" type="xs:string" use="required"/> 
+   <xs:attribute name="URI" type="xs:string" use="required"/> 
+</xs:complexType>
+
+<xs:complexType name="ruleType">
+    <xs:sequence>
+      <xs:element name="context" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="left" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="right" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="new" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="exception" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="explanation" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required"/> 
+ </xs:complexType>
+
+</xs:schema>

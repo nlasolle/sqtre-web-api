@@ -1,0 +1,1616 @@
+@prefix ahpo: <http://e-hp.ahp-numerique.fr/ahpo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix o:     <http://omeka.org/s/vocabs/o#> .
+@base <http://e-hp.ahp-numerique.fr/ahpo> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<http://e-hp.ahp-numerique.fr/ahpo> rdf:type owl:Ontology ;
+                                    
+                                    owl:versionIRI <http://e-hp.ahp-numerique.fr/ahpo/2.0> .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://www.w3.org/2000/01/rdf-schema#subPropertyOf
+
+rdfs:subPropertyOf rdf:type owl:AnnotationProperty .
+
+
+
+###  http://www.w3.org/2002/07/owl#equivalentClass
+
+owl:equivalentClass rdf:type owl:AnnotationProperty .
+
+
+
+###  http://www.w3.org/2002/07/owl#equivalentProperty
+
+owl:equivalentProperty rdf:type owl:AnnotationProperty .
+
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
+
+dcterms:subject rdfs:label "hasSubject"@en, 
+                           "aPourThème"@fr.
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#archivedAt
+
+ahpo:archivedAt rdf:type owl:ObjectProperty ;
+            
+            rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ;
+            
+            rdfs:domain ahpo:Document ;
+            
+            rdfs:range ahpo:ArchivePlace ;
+            
+            rdfs:comment "Lieu où le document est conservé."@fr ,
+                         "Location where the document is curated."@en ;
+            
+            rdfs:label "archivedAt"@en ,
+                       "archivéÀ"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#authoredBy
+
+ahpo:authoredBy rdf:type owl:ObjectProperty ;
+            
+            rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
+            
+            rdfs:domain ahpo:Document ;
+            
+            rdfs:range ahpo:Person ;
+            
+            rdfs:comment "Auteur principal du document écrit."@fr ,
+                         "Main author of the written document."@en ;
+            
+            rdfs:label "authoredBy"@en ,
+                       "écritPar"@fr .
+
+###  http://e-hp.ahp-numerique.fr/ahpo#hasTopic
+
+ahpo:hasTopic rdf:type owl:ObjectProperty ;
+            
+            rdfs:domain ahpo:Document ;
+            
+            rdfs:label "hasTopic"@en ,
+                       "aPourSujet"@fr .
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#citeApparatArgot
+
+ahpo:citeApparatArgot rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#cite> ;
+                  
+                  rdfs:comment "Terme d'argot polytechnique cité dans l'apparat critique." ;
+                  
+                  rdfs:label "citeApparatArgot" .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#citeApparatBiblio
+
+ahpo:citeApparatBiblio rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#cite> ;
+                   
+                   rdfs:comment "Référence bibliographique citée dans l'apparat critique." ;
+                   
+                   rdfs:label "citeApparatBiblio" .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#citeApparatName
+
+ahpo:citeApparatName rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#cite> ;
+                 
+                 rdfs:domain ahpo:Document ,
+                             ahpo:Journal ,
+                             <http://purl.org/ontology/bibo/Article> ,
+                             <http://purl.org/ontology/bibo/Book> ,
+                             <http://purl.org/ontology/bibo/Chapter> ,
+                             <http://purl.org/ontology/bibo/Journal> ,
+                             <http://purl.org/ontology/bibo/Letter> ,
+                             <http://purl.org/ontology/bibo/Report> ,
+                             <http://purl.org/ontology/bibo/Thesis> ,
+                             <http://xmlns.com/foaf/0.1/Document> ;
+                 
+                 rdfs:comment "Personne citée dans l'apparat critique."@fr ;
+                 
+                 rdfs:label "citeApparatName"@en ,
+                            "citeApparatNom"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#citeArgot
+
+ahpo:citeArgot rdf:type owl:ObjectProperty ;
+           
+           rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#cite> ;
+           
+           rdfs:comment "Argot polytechnique utilisé dans le document primaire."@fr ;
+           
+           rdfs:label "citeArgot" .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#citeName
+
+ahpo:citeName rdf:type owl:ObjectProperty ;
+          
+          rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#cite> ;
+          
+          rdfs:comment "Personne citée dans le document primaire." ;
+          
+          rdfs:label "cite"@en ,
+                     "cite"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#citeOEuvre
+
+ahpo:citeOEuvre rdf:type owl:ObjectProperty ;
+            
+            rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#cite> ;
+            
+            rdfs:comment "Oeuvre (théâtre, musique, littérature, ...) citée."@fr ;
+            
+            rdfs:label "citeOEuvre" .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#classificationNumber
+
+ahpo:classificationNumber rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ;
+                      
+                      rdfs:domain ahpo:Document .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#destinationAddress
+
+ahpo:destinationAddress rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:subPropertyOf <http://www.w3.org/ns/locn#address> ;
+                    
+                    rdfs:domain ahpo:Letter ;
+                    
+                    rdfs:range ahpo:Address ;
+                    
+                    rdfs:comment "Address written on the envelope. The letter has been sent to this address."@en ,
+                                 "Adresse écrite sur l’enveloppe. La lettre a été envoyée à cette adresse."@fr ;
+                    
+                    rdfs:label "adresseDeDestination"@fr ,
+                               "destinationAddress"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#editedBy
+
+ahpo:editedBy rdf:type owl:ObjectProperty ;
+          
+          rdfs:subPropertyOf <http://purl.org/dc/terms/contributor> ;
+          
+          rdfs:domain ahpo:Document ;
+          
+          rdfs:range ahpo:Person ;
+          
+          rdfs:comment "Person who has contributed to the document writing, even in a minor way. They cannot be considered as author because they have not authored the main content."@en ,
+                       "Personne ayant contribué à l’écriture du document, même d’une façon mineure. Elle ne peut pas être considérée comme auteur parce qu’elle n’est pas à l’origine du contenu central."@fr ;
+          
+          rdfs:label "aPourContributeur"@fr ,
+                     "editedBy"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#hasAddress
+
+ahpo:hasAddress rdf:type owl:ObjectProperty ;
+            
+            owl:equivalentProperty <http://www.w3.org/ns/locn#address> ;
+            
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            
+            rdfs:domain ahpo:Place ;
+            
+            rdfs:range ahpo:Address ;
+            
+            rdfs:comment "Address which defines the location."@en ,
+                         "Adresse qui définit le lieu."@fr ;
+            
+            rdfs:label "aPourAdresse"@fr ,
+                       "hasAddress"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#hasDedicatedChapter
+
+ahpo:hasDedicatedChapter rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> ;
+                     
+                     rdfs:domain owl:Thing ;
+                     
+                     rdfs:range ahpo:BookChapter ;
+                     
+                     rdfs:comment "Book chapter which is about the resource, or only contains elements related to the resource."@en ,
+                                  "Chapitre de livre qui parle de la ressource, ou qui ne contient que des éléments liés à la ressource."@fr ;
+                     
+                     rdfs:label "aPourChapitreDédié"@fr ,
+                                "hasDedicatedChapter"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#hasReply
+
+ahpo:hasReply rdf:type owl:ObjectProperty ;
+          
+          rdfs:domain ahpo:Letter ;
+          
+          rdfs:range ahpo:Letter ;
+          
+          rdfs:comment "Letter which replies to the letter."@en ,
+                       "Lettre qui répond à la lettre."@fr ;
+          
+          rdfs:label "aPourRéponse"@fr ,
+                     "hasReply"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#inBook
+
+ahpo:inBook rdf:type owl:ObjectProperty ;
+        
+        rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ;
+        
+        rdfs:domain ahpo:BookChapter ;
+        
+        rdfs:range ahpo:Book ;
+        
+        rdfs:comment "Book to which the chapter belongs."@en ,
+                     "Livre auquel le chapitre appartient"@fr ;
+        
+        rdfs:label "dansLeLivre"@fr ,
+                   "inBook"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#inCollection
+
+ahpo:inCollection rdf:type owl:ObjectProperty ;
+              
+              rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ,
+                                 owl:topObjectProperty ;
+              
+              rdfs:domain ahpo:Book ;
+              
+              rdfs:range ahpo:Collection ;
+              
+              rdfs:comment "Collected works to which the book belongs."@en ,
+                           "Collection éditoriale à laquelle le livre appartient."@fr ;
+              
+              rdfs:label "dansLaCollection"@fr ,
+                         "inCollection"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#isAbout
+
+ahpo:isAbout rdf:type owl:ObjectProperty ;
+         
+         rdfs:domain ahpo:Report ;
+         
+         rdfs:range ahpo:Document ;
+         
+         rdfs:comment "Document about which the report is."@en ,
+                      "Document duquel parle le rapport."@fr ;
+         
+         rdfs:label "isAbout"@en ,
+                    "parleDe"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#issueOf
+
+ahpo:issueOf rdf:type owl:ObjectProperty ;
+         
+         rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ,
+                            owl:topObjectProperty ;
+         
+         rdfs:domain ahpo:Issue ;
+         
+         rdfs:range ahpo:Journal ;
+         
+         rdfs:comment "Lie le numéro de revue à la Revue en tant qu’entité."@fr ,
+                      "Links the journal issue to a journal entity."@en ;
+         
+         rdfs:label "estUnNuméroDe"@fr ,
+                    "issueOf"@en ;
+         
+         <http://www.w3.org/2004/02/skos/core#altLabel> "journal"@en ,
+                                                        "revue"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#liveAt
+
+ahpo:liveAt rdf:type owl:ObjectProperty ;
+        
+        rdfs:subPropertyOf <http://www.w3.org/ns/locn#address> ;
+        
+        rdfs:domain ahpo:Person ;
+        
+        rdfs:range ahpo:Address ;
+        
+        rdfs:comment "Adresse du domicile de la personne."@fr ,
+                     "Home address of the person."@en ;
+        
+        rdfs:label "liveAt"@en ,
+                   "vitÀ"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#locatedAt
+
+ahpo:locatedAt rdf:type owl:ObjectProperty ;
+           
+           rdfs:subPropertyOf <http://www.w3.org/ns/locn#address> ;
+           
+           rdfs:domain ahpo:Institution ;
+           
+           rdfs:range ahpo:Address ;
+           
+           rdfs:comment "Address where the institution has been settled."@en ,
+                        "Adresse où est installée l’institution."@fr ;
+           
+           rdfs:label "locatedAt"@en ,
+                      "situéÀ"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#publishedBy
+
+ahpo:publishedBy rdf:type owl:ObjectProperty ;
+             
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             
+             rdfs:domain ahpo:Book ;
+             
+             rdfs:range ahpo:Publisher ;
+             
+             rdfs:comment "Organisation qui a publié le livre."@fr ,
+                          "Organisation which has published the book."@en ;
+             
+             rdfs:label "publishedBy"@en ,
+                        "publiéPar"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#publishedIn
+
+ahpo:publishedIn rdf:type owl:ObjectProperty ;
+             
+             rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ;
+             
+             rdfs:domain ahpo:Document ;
+             
+             rdfs:range ahpo:BookChapter ,
+                        ahpo:Issue ;
+             
+             rdfs:comment "Journal issue or book chapter in which the document has been published."@en ,
+                          "Numéro de revue ou chapitre de livre dans lequel le document a été publié."@fr ;
+             
+             rdfs:label "publishedIn"@en ,
+                        "publiéDans"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#publishedInReference
+
+ahpo:publishedInReference rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ;
+                      
+                      rdfs:domain ahpo:Document .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#repliesTo
+
+ahpo:repliesTo rdf:type owl:ObjectProperty ;
+           
+           rdfs:domain ahpo:Letter ;
+           
+           rdfs:range ahpo:Letter ;
+           
+           rdfs:comment "Letter to which the letter replies to."@en ,
+                        "Lettre à laquelle répond la lettre."@fr ;
+           
+           rdfs:label "repliesTo"@en ,
+                      "répondÀ"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#rightsHolder
+
+ahpo:rightsHolder rdf:type owl:ObjectProperty ;
+              
+              rdfs:domain ahpo:Document ;
+              
+              rdfs:range ahpo:Institution ;
+              
+              rdfs:comment "Institution qui détient les droits d’auteurs sur le document."@fr ,
+                           "Institution which is copyright owner of the document."@en ;
+              
+              rdfs:label "droitsDétenusPar"@fr ,
+                         "rightsHeldBy"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#sentBy
+
+ahpo:sentBy rdf:type owl:ObjectProperty ;
+        
+        rdfs:subPropertyOf <http://onto.dm2e.eu/schemas/dm2e/writer> ,
+                           owl:topObjectProperty ;
+        
+        rdfs:domain ahpo:Letter ;
+        
+        rdfs:range ahpo:Person ;
+        
+        rdfs:comment "Auteur de la lettre ahpo: celui qui l’a écrite ou celui qui l’a signée."@fr ,
+                     "Letter author: the writer or the person who sign the letter."@en ;
+        
+        rdfs:label "envoyéPar"@fr ,
+                   "sentBy"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#sentTo
+
+ahpo:sentTo rdf:type owl:ObjectProperty ;
+        
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        
+        rdfs:domain ahpo:Letter ;
+        
+        rdfs:range ahpo:Person ;
+        
+        rdfs:comment "Addressee: the person to whom the letter is addressed."@en ,
+                     "Destinataire ahpo: la personne à qui est adressée la lettre."@fr ;
+        
+        rdfs:label "envoyéÀ"@fr ,
+                   "sentTo"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#writtenAt
+
+ahpo:writtenAt rdf:type owl:ObjectProperty ;
+           
+           rdfs:subPropertyOf <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCreationLocation> ;
+           
+           rdfs:domain ahpo:Letter ;
+           
+           rdfs:range ahpo:Address ;
+           
+           rdfs:comment "Address (maybe only defining the town) where the letter has been written. It’s often written in top of the letter, next to the date in formal French letters."@en ,
+                        "Adresse (définissant peut-être uniquement la ville) où la lettre a été écrite. Elle est souvent écrite en haut de la lettre, à côté de la date dans les lettres formelles françaises."@fr ;
+           
+           rdfs:label "writtenAt"@en ,
+                      "écriteÀ"@fr .
+
+
+
+###  http://onto.dm2e.eu/schemas/dm2e/writer
+
+<http://onto.dm2e.eu/schemas/dm2e/writer> rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dc/terms/contributor
+
+<http://purl.org/dc/terms/contributor> rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dc/terms/creator
+
+<http://purl.org/dc/terms/creator> rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/dc/terms/isPartOf
+
+<http://purl.org/dc/terms/isPartOf> rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#cite
+
+<http://www.co-ode.org/ontologies/ont.owl#cite> rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCreationLocation
+
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCreationLocation> rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.w3.org/ns/locn#address
+
+<http://www.w3.org/ns/locn#address> rdf:type owl:ObjectProperty .
+
+
+
+###  http://xmlns.com/foaf/0.1/isPrimaryTopicOf
+
+<http://xmlns.com/foaf/0.1/isPrimaryTopicOf> rdf:type owl:ObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://d-nb.info/standards/elementset/gnd#dateOfConferenceOrEvent
+
+<http://d-nb.info/standards/elementset/gnd#dateOfConferenceOrEvent> rdf:type owl:DatatypeProperty .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#chapterNumber
+
+ahpo:chapterNumber rdf:type owl:DatatypeProperty ;
+               
+               rdfs:subPropertyOf owl:topDataProperty ;
+               
+               rdfs:domain ahpo:BookChapter ;
+               
+               rdfs:range xsd:positiveInteger ;
+               
+               rdfs:comment "Le numéro du chapitre dans le livre."@fr ,
+                            "The number of the chapter in the book."@en ;
+               
+               rdfs:label "chapterNumber"@en ,
+                          "numéroDeChapitre"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#classificationNumber
+
+ahpo:classificationNumber rdf:type owl:DatatypeProperty ;
+                      
+                      rdfs:subPropertyOf owl:topDataProperty ;
+                      
+                      rdfs:range rdfs:Literal .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#country
+
+ahpo:country rdf:type owl:DatatypeProperty ;
+         
+         rdfs:subPropertyOf owl:topDataProperty ;
+         
+         rdfs:domain ahpo:Address ;
+         
+         rdfs:range xsd:string ;
+         
+         rdfs:comment "Name of the most global administrative unit of the address."@en ,
+                      "Nom de l’unité administrative la plus globale de l’adresse."@fr ;
+         
+         rdfs:label "country"@en ,
+                    "pays"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#documentType
+
+ahpo:documentType rdf:type owl:DatatypeProperty ;
+              
+              rdfs:subPropertyOf owl:topDataProperty ;
+              
+              rdfs:domain ahpo:Document ;
+              
+              rdfs:range xsd:string ;
+              
+              rdfs:comment "Forme du document, tirée d’un vocabulaire contrôlé."@fr ,
+                           "Kind of the document, picked in a controlled vocabulary."@en ;
+              
+              rdfs:label "documentType"@en ,
+                         "typeDeDocument"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#earliestPossibleWritingDate
+
+ahpo:earliestPossibleWritingDate rdf:type owl:DatatypeProperty ;
+                             
+                             rdfs:subPropertyOf ahpo:hypotheticalWritingDate ;
+                             
+                             rdfs:domain ahpo:Document ;
+                             
+                             rdfs:range xsd:dateTime ;
+                             
+                             rdfs:comment "Earliest possible date on when the document might been written. For example, for letters, it can be the writing date of the letter to which that letter replies."@en ,
+                                          "La plus ancienne date à partir de laquelle le document a pu être écrit. Par exemple, pour les lettres, cela peut être la date d’écriture de la lettre à laquelle cette lettre répond."@fr ;
+                             
+                             rdfs:label "earliestPossibleWritingDate"@en ,
+                                        "écritAuPlusTôtLe"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#editionNumber
+
+ahpo:editionNumber rdf:type owl:DatatypeProperty ;
+               
+               rdfs:subPropertyOf owl:topDataProperty ;
+               
+               rdfs:domain ahpo:Book ;
+               
+               rdfs:range xsd:positiveInteger ;
+               
+               rdfs:comment "Numéro de version de l’édition, pour les livres réédités."@fr ,
+                            "Version number of the edition for republished books."@en ;
+               
+               rdfs:label "editionNumber"@en ,
+                          "numéroDeLÉdition"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#endPage
+
+ahpo:endPage rdf:type owl:DatatypeProperty ;
+         
+         rdfs:subPropertyOf owl:topDataProperty ;
+         
+         rdfs:domain ahpo:Article ;
+         
+         rdfs:range xsd:positiveInteger ;
+         
+         rdfs:comment "Book or issue page where the article ends."@en ,
+                      "Page du livre ou du numéro de journal où l’article s’achève."@fr ;
+         
+         rdfs:label "endPage"@en ,
+                    "pageDeFin"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#familyName
+
+ahpo:familyName rdf:type owl:DatatypeProperty ;
+            
+            rdfs:subPropertyOf owl:topDataProperty ;
+            
+            rdfs:domain ahpo:Person ;
+            
+            rdfs:range xsd:string ;
+            
+            rdfs:comment "Family name of the person (often the last part of the full name)."@en ,
+                         "Nom de famille de la personne (souvent la dernière partie du nom complet)."@fr ;
+            
+            rdfs:label "familyName"@en ,
+                       "nomDeFamille"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#firstName
+
+ahpo:firstName rdf:type owl:DatatypeProperty ;
+           
+           rdfs:subPropertyOf owl:topDataProperty ;
+           
+           rdfs:domain ahpo:Person ;
+           
+           rdfs:range xsd:string ;
+           
+           rdfs:comment "Given name of the person (often the first part of the full name)."@en ,
+                        "Prénom donné à la personne (souvent la première partie du nom complet)."@fr ;
+           
+           rdfs:label "firstName"@en ,
+                      "prénom"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#fullAddress
+
+ahpo:fullAddress rdf:type owl:DatatypeProperty ;
+             
+             rdfs:subPropertyOf owl:topDataProperty ;
+             
+             rdfs:domain ahpo:Address ;
+             
+             rdfs:range xsd:string ;
+             
+             rdfs:comment "Adresse postale complète, lisible par l’humain, qui identifie un lieu unique."@fr ,
+                          "Full human-readable post address, which identifies a unique place."@en ;
+             
+             rdfs:label "adresseComplète"@fr ,
+                        "fullAddress"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#fullTextOnlineAt
+
+ahpo:fullTextOnlineAt rdf:type owl:DatatypeProperty ;
+                  
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  
+                  rdfs:domain ahpo:Document ;
+                  
+                  rdfs:range xsd:anyURI ;
+                  
+                  rdfs:comment "URL où une version numérique complète du document peut être trouvée."@fr ,
+                               "URL where we can find a full digitised version of the document."@en ;
+                  
+                  rdfs:label "fullTextOnlineAt"@en ,
+                             "texteCompletEnLigneSur"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#hypotheticalWritingDate
+
+ahpo:hypotheticalWritingDate rdf:type owl:DatatypeProperty ;
+                         
+                         rdfs:subPropertyOf <http://purl.org/dc/terms/created> ,
+                                            owl:topDataProperty ;
+                         
+                         rdfs:domain ahpo:Document ;
+                         
+                         rdfs:range xsd:dateTime ;
+                         
+                         rdfs:comment "Date on when the document is supposed to have been written."@en ,
+                                      "Date à laquelle le document est supposé avoir été écrit."@fr ;
+                         
+                         rdfs:label "dateDÉcritureHypothétique"@fr ,
+                                    "hypotheticalWritingDate"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#identifier
+
+ahpo:identifier rdf:type owl:DatatypeProperty ;
+            
+            owl:equivalentProperty <http://purl.org/dc/terms/identifier> ;
+            
+            rdfs:subPropertyOf owl:topDataProperty ;
+            
+            rdfs:domain ahpo:Document ;
+            
+            rdfs:range xsd:string ;
+            
+            rdfs:comment "Literal which let identify the document in a given context."@en ,
+                         "Littéral qui permet d’identifier le document dans un contexte donné."@fr ;
+            
+            rdfs:label "identifiant"@fr ,
+                       "identifier"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#identifierInLocalArchives
+
+ahpo:identifierInLocalArchives rdf:type owl:DatatypeProperty ;
+                           
+                           rdfs:subPropertyOf owl:topDataProperty ;
+                           
+                           rdfs:domain ahpo:Document ;
+                           
+                           rdfs:range rdfs:Literal ;
+                           
+                           rdfs:comment "Literal identifying the document in local archives."@en ,
+                                        "Littéral identifiant le document dans les archives locales."@fr ;
+                           
+                           rdfs:label "identifiantDansLesArchivesLocales"@fr ,
+                                      "identifierInLocalArchives"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#incipit
+
+ahpo:incipit rdf:type owl:DatatypeProperty ;
+         
+         rdfs:subPropertyOf owl:topDataProperty ;
+         
+         rdfs:domain ahpo:Document ;
+         
+         rdfs:range xsd:string ;
+         
+         rdfs:comment "First words of the document content. For a letter, incipit does not include salutation."@en ,
+                      "Premiers mots du contenu d’un document. Pour une lettre, l’incipit n’inclut pas la formule de salutation."@fr ;
+         
+         rdfs:label "incipit"@en ,
+                    "incipit"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#issueNumber
+
+ahpo:issueNumber rdf:type owl:DatatypeProperty ;
+             
+             rdfs:subPropertyOf owl:topDataProperty ;
+             
+             rdfs:domain ahpo:Issue ;
+             
+             rdfs:range xsd:positiveInteger ;
+             
+             rdfs:comment "Number of the journal issue."@en ,
+                          "Numéro de parution du numéro de revue."@fr ;
+             
+             rdfs:label "issueNumber"@en ,
+                        "numéroDeParution"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#language
+
+ahpo:language rdf:type owl:DatatypeProperty ;
+          
+          rdfs:subPropertyOf owl:topDataProperty ;
+          
+          rdfs:domain ahpo:Document ;
+          
+          rdfs:range xsd:language ;
+          
+          rdfs:comment "Language of the document, written as a standard abbreviation (e.g. fr, en, fr-FR…)."@en ,
+                       "Langue du document, écrite comme une abréviation normalisée (par exemple ahpo: fr, en, fr-FR…)"@fr ;
+          
+          rdfs:label "language"@en ,
+                     "langue"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#latestPossibleWritingDate
+
+ahpo:latestPossibleWritingDate rdf:type owl:DatatypeProperty ;
+                           
+                           rdfs:subPropertyOf ahpo:hypotheticalWritingDate ;
+                           
+                           rdfs:domain ahpo:Document ;
+                           
+                           rdfs:range xsd:dateTime ;
+                           
+                           rdfs:comment "La plus récente date jusqu’à laquelle le document a pu être écrit. Par exemple, pour les lettres, cela peut être la date d’écriture de la réponse."@fr ,
+                                        "Latest possible date on when the document might been written. For example, for letters, it can be the answer writing date."@en ;
+                           
+                           rdfs:label "latestPossibleWritingDate"@en ,
+                                      "écritAuPlusTardLe"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#letterNumber
+
+ahpo:letterNumber rdf:type owl:DatatypeProperty ;
+              
+              rdfs:comment "Le numéro de la lettre (ordre chronologique). Une lettre ajoutée après coup est identifiée par un numéro et une lettre (ex ahpo: 123a pour une lettre s'insérant entre la 123 et 124)."@fr ;
+              
+              rdfs:label "numeroLettre"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#name
+
+ahpo:name rdf:type owl:DatatypeProperty ;
+      
+      rdfs:subPropertyOf <http://purl.org/dc/terms/title> ,
+                         owl:topDataProperty ;
+      
+      rdfs:domain ahpo:Institution ;
+      
+      rdfs:range xsd:string ;
+      
+      rdfs:comment "Designation of the institution."@en ,
+                   "Désignation de l’institution"@fr ;
+      
+      rdfs:label "name"@en ,
+                 "nom"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#numberOfPages
+
+ahpo:numberOfPages rdf:type owl:DatatypeProperty ;
+               
+               rdfs:subPropertyOf owl:topDataProperty ;
+               
+               rdfs:domain ahpo:Document ;
+               
+               rdfs:range xsd:positiveInteger ;
+               
+               rdfs:comment "Nombre de pages du document."@fr ,
+                            "Number of pages of the document."@en ;
+               
+               rdfs:label "nombreDePages"@fr ,
+                          "numberOfPages"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#numberOfVolumes
+
+ahpo:numberOfVolumes rdf:type owl:DatatypeProperty ;
+                 
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 
+                 rdfs:domain ahpo:Book ,
+                             ahpo:Collection ;
+                 
+                 rdfs:range xsd:positiveInteger ;
+                 
+                 rdfs:comment "Nombre de volumes pour un ouvrage en plusieurs volumes ou pour une collection éditoriale."@fr ,
+                              "Number of volumes for a multi-volume book or for a book collection."@en ;
+                 
+                 rdfs:label "nombreDeVolumes"@fr ,
+                            "numberOfVolumes"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#publicationDate
+
+ahpo:publicationDate rdf:type owl:DatatypeProperty ;
+                 
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 
+                 rdfs:domain ahpo:Book ,
+                             ahpo:Issue ;
+                 
+                 rdfs:range xsd:dateTime ;
+                 
+                 rdfs:comment "Date to which the book or the journal issue has been published."@en ,
+                              "Date à laquelle le livre ou le numéro de revue a été publié."@fr ;
+                 
+                 rdfs:label "dateDePublication"@fr ,
+                            "publicationDate"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#publishedInReference
+
+ahpo:publishedInReference rdf:type owl:DatatypeProperty ;
+                      
+                      rdfs:subPropertyOf owl:topDataProperty ;
+                      
+                      rdfs:range rdfs:Literal .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#references
+
+ahpo:references rdf:type owl:DatatypeProperty ;
+            
+            rdfs:subPropertyOf owl:topDataProperty ;
+            
+            rdfs:domain ahpo:Document ;
+            
+            rdfs:range xsd:string ;
+            
+            rdfs:comment "Identifiant d’un document qui est cité par le document."@fr ,
+                         "Identifier of a document which is referenced by the document."@en ;
+            
+            rdfs:label "references"@en ,
+                       "référence"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#sectionNumber
+
+ahpo:sectionNumber rdf:type owl:DatatypeProperty ;
+               
+               rdfs:subPropertyOf owl:topDataProperty ;
+               
+               rdfs:domain ahpo:Letter ;
+               
+               rdfs:range xsd:positiveInteger ;
+               
+               rdfs:comment "Number of the section of the book in which the letter has been published (for published letters)."@en ,
+                            "Numéro de la section du livre dans laquelle la lettre a été publiée (pour les lettres publiées)."@fr ;
+               
+               rdfs:label "numéroDeSection"@fr ,
+                          "sectionNumber"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#startPage
+
+ahpo:startPage rdf:type owl:DatatypeProperty ;
+           
+           rdfs:subPropertyOf owl:topDataProperty ;
+           
+           rdfs:domain ahpo:Article ;
+           
+           rdfs:range xsd:positiveInteger ;
+           
+           rdfs:comment "Book or issue page where the article starts."@en ,
+                        "Page du livre ou du numéro de revue à laquelle l’article commence."@fr ;
+           
+           rdfs:label "pageDeDébut"@fr ,
+                      "startPage"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#title
+
+ahpo:title rdf:type owl:DatatypeProperty ;
+       
+       owl:equivalentProperty <http://purl.org/dc/terms/title> ;
+       
+       rdfs:subPropertyOf owl:topDataProperty ;
+       
+       rdfs:domain ahpo:Collection ,
+                   ahpo:Document ,
+                   ahpo:Journal ;
+       
+       rdfs:range xsd:string ;
+       
+       rdfs:comment "Title designating the document (book, article…), the collection or the journal."@en ,
+                    "Titre désignant le document (livre, article…), la collection ou la revue."@fr ;
+       
+       rdfs:label "title"@en ,
+                  "titre"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#town
+
+ahpo:town rdf:type owl:DatatypeProperty ;
+      
+      rdfs:subPropertyOf owl:topDataProperty ;
+      
+      rdfs:domain ahpo:Address ;
+      
+      rdfs:range xsd:string ;
+      
+      rdfs:comment "City, main post division."@en ,
+                   "Ville, village ahpo: principale division postale."@fr ;
+      
+      rdfs:label "commune"@fr ,
+                 "town"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#viafIdentifier
+
+ahpo:viafIdentifier rdf:type owl:DatatypeProperty ;
+                
+                rdfs:subPropertyOf <http://purl.org/dc/terms/identifier> ,
+                                   owl:topDataProperty ;
+                
+                rdfs:domain owl:Thing ;
+                
+                rdfs:range xsd:integer ;
+                
+                rdfs:comment "Identification number in the virtual international authority file for the resource (mainly persons, but other kinds of resources too)."@en ,
+                             "Numéro d’identification dans le fichier virtuel international d’autorité (VIAF) pour la ressource (principalement les personnes, mais aussi d’autres types de ressource)."@fr ;
+                
+                rdfs:label "identifiantViaf"@fr ,
+                           "viafIdentifier"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#vivaDate
+
+ahpo:vivaDate rdf:type owl:DatatypeProperty ;
+          
+          rdfs:subPropertyOf <http://d-nb.info/standards/elementset/gnd#dateOfConferenceOrEvent> ,
+                             owl:topDataProperty ;
+          
+          rdfs:domain ahpo:Thesis ;
+          
+          rdfs:range xsd:dateTime ;
+          
+          rdfs:comment "Date on when the PhD thesis has been presented."@en ,
+                       "Date à laquelle la thèse de doctorat a été soutenue."@fr ;
+          
+          rdfs:label "dateDeSoutenance"@fr ,
+                     "vivaDate"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#volumeNumber
+
+ahpo:volumeNumber rdf:type owl:DatatypeProperty ;
+              
+              rdfs:subPropertyOf owl:topDataProperty ;
+              
+              rdfs:domain ahpo:Book ,
+                          ahpo:Issue ;
+              
+              rdfs:range xsd:positiveInteger ;
+              
+              rdfs:comment "Number of the volume ordering the book in a multi-volume book or in a collection, or the issue for journals using a volume classification."@en ,
+                           "Numéro du volume classant le livre dans un ouvrage en plusieurs volumes ou dans une collection, ou le numéro de revue pour les revues qui utilisent une classification par volume."@fr ;
+              
+              rdfs:label "numéroDeVolume"@fr ,
+                         "volumeNumber"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#website
+
+ahpo:website rdf:type owl:DatatypeProperty ;
+         
+         rdfs:subPropertyOf owl:topDataProperty ;
+         
+         rdfs:domain ahpo:Institution ;
+         
+         rdfs:range xsd:anyURI ;
+         
+         rdfs:comment "Full URL of the institution official website."@en ,
+                      "URL complète du site web officiel de l’institution."@fr ;
+         
+         rdfs:label "siteWeb"@fr ,
+                    "website"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#writingDate
+
+ahpo:writingDate rdf:type owl:DatatypeProperty ;
+             
+             rdfs:subPropertyOf <http://purl.org/dc/terms/created> ,
+                                owl:topDataProperty ;
+             
+             rdfs:domain ahpo:Document ;
+             
+             rdfs:range xsd:dateTime ;
+             
+             rdfs:comment "Date on when the document has been written. For letters, it’s often written in their header."@en ,
+                          "Date à laquelle le document a été écrit. Pour les lettres, elle est souvent écrite dans l’entête."@fr ;
+             
+             rdfs:label "dateDÉcriture"@fr ,
+                        "writingDate"@en .
+
+
+
+###  http://purl.org/dc/terms/created
+
+<http://purl.org/dc/terms/created> rdf:type owl:DatatypeProperty .
+
+
+
+###  http://purl.org/dc/terms/identifier
+
+<http://purl.org/dc/terms/identifier> rdf:type owl:DatatypeProperty .
+
+
+
+###  http://purl.org/dc/terms/title
+
+<http://purl.org/dc/terms/title> rdf:type owl:DatatypeProperty .
+
+
+
+###  http://purl.org/vocab/bio/0.1/Birth
+
+<http://purl.org/vocab/bio/0.1/Birth> rdf:type owl:DatatypeProperty ;
+                                      
+                                      rdfs:domain ahpo:Person ;
+                                      
+                                      rdfs:comment "La date de naissance d'une personne"@fr ;
+                                      
+                                      rdfs:label "dateNaissance"@fr .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#Address
+
+ahpo:Address rdf:type owl:Class ;
+         
+         owl:equivalentClass <http://www.w3.org/ns/locn#Address> ;
+         
+         rdfs:subClassOf owl:Thing ;
+         
+         rdfs:label "Address"@en ,
+                    "Adresse"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#ArchivePlace
+
+ahpo:ArchivePlace rdf:type owl:Class ;
+              
+              rdfs:subClassOf ahpo:Place ;
+              
+              rdfs:comment "Endroit où certains documents sont conservés."@fr ,
+                           "Place where some documents are curated."@en ;
+              
+              rdfs:label "Archive place"@en ,
+                         "Lieu d’archives"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#Article
+
+ahpo:Article rdf:type owl:Class ;
+         
+         owl:equivalentClass <http://purl.org/ontology/bibo/Article> ;
+         
+         rdfs:subClassOf ahpo:Document ;
+         
+         rdfs:comment "Article scientifique, publié dans une revue."@fr ,
+                      "Scientific article, published in a journal."@en ;
+         
+         rdfs:label "Article"@en ,
+                    "Article"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#Book
+
+ahpo:Book rdf:type owl:Class ;
+      
+      owl:equivalentClass <http://purl.org/ontology/bibo/Book> ;
+      
+      rdfs:subClassOf ahpo:Document ;
+      
+      rdfs:comment "Large publication écrite."@fr ,
+                   "Large written publication."@en ;
+      
+      rdfs:label "Book"@en ,
+                 "Livre"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#BookChapter
+
+ahpo:BookChapter rdf:type owl:Class ;
+             
+             owl:equivalentClass <http://purl.org/ontology/bibo/Chapter> ;
+             
+             rdfs:subClassOf ahpo:Document ;
+             
+             rdfs:comment "Formally identified part of a book."@en ,
+                          "Partie d’un livre formellement identifiée."@fr ;
+             
+             rdfs:label "Book chapter"@en ,
+                        "Chapitre de livre"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#Collection
+
+ahpo:Collection rdf:type owl:Class ;
+            
+            owl:equivalentClass <http://purl.org/ontology/bibo/Collection> ;
+            
+            rdfs:subClassOf owl:Thing ;
+            
+            rdfs:comment "Book collection: set of books with similarities, grouped by the publisher."@en ,
+                         "Collection éditoriale ahpo: ensemble de livres avec des similarités regroupés par la maison d’édition."@fr ;
+            
+            rdfs:label "Collection"@en ,
+                       "Collection"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#Commentary
+
+ahpo:Commentary rdf:type owl:Class ;
+            
+            rdfs:subClassOf ahpo:BookChapter ;
+            
+            rdfs:comment "Part of a book which only contains metadescriptive information about another part of the book, even the full book."@en ,
+                         "Partie d’un livre ne contenant que des informations métadescriptives à propos d’une autre partie du livre ou du livre entier."@fr ;
+            
+            rdfs:label "Commentaire"@fr ,
+                       "Commentary"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#Document
+
+ahpo:Document rdf:type owl:Class ;
+          
+          owl:equivalentClass <http://xmlns.com/foaf/0.1/Document> ;
+          
+          rdfs:subClassOf owl:Thing ;
+          
+          rdfs:comment "Any kind of document, which can be archived and digitised."@en ,
+                       "Tout type de document, pouvant être archivé et numérisé."@fr ;
+          
+          rdfs:label "Document"@en ,
+                     "Document"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#Institution
+
+ahpo:Institution rdf:type owl:Class ;
+             
+             owl:equivalentClass <http://xmlns.com/foaf/0.1/Organization> ;
+             
+             rdfs:comment "Organisation ayant la personnalité morale."@fr ,
+                          "Organisation with legal personaliy."@en ;
+             
+             rdfs:label "Institution"@en ,
+                        "Institution"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#Issue
+
+ahpo:Issue rdf:type owl:Class ;
+       
+       owl:equivalentClass <http://purl.org/ontology/bibo/Issue> ;
+       
+       rdfs:subClassOf ahpo:Document ;
+       
+       rdfs:comment "Journal issue in which are published scientific articles. An issue is identified with a volume number and/or an issue number."@en ,
+                    "Numéro d’une revue dans laquelle sont publiés des articles scientifiques. Un numéro est identifiée par un numéro de volume et/ou un numéro de parution."@fr ;
+       
+       rdfs:label "Issue"@en ,
+                  "Numéro"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#Journal
+
+ahpo:Journal rdf:type owl:Class ;
+         
+         owl:equivalentClass <http://purl.org/ontology/bibo/Journal> ;
+         
+         rdfs:subClassOf owl:Thing ;
+         
+         rdfs:comment "Periodical scientific publication."@en ,
+                      "Publication périodique scientifique."@fr ;
+         
+         rdfs:label "Journal"@en ,
+                    "Revue"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#Letter
+
+ahpo:Letter rdf:type owl:Class ;
+        
+        owl:equivalentClass <http://purl.org/ontology/bibo/Letter> ;
+        
+        rdfs:subClassOf ahpo:Document ;
+        
+        rdfs:comment "Text written by a person to a defined person."@en ,
+                     "Texte écrit par une personne pour une personne définie."@fr ;
+        
+        rdfs:label "Letter"@en ,
+                   "Lettre"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#Person
+
+ahpo:Person rdf:type owl:Class ;
+        
+        owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> ;
+        
+        rdfs:comment "Human person."@en ,
+                     "Personne humaine."@fr ;
+        
+        rdfs:label "Person"@en ,
+                   "Personne"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#Place
+
+ahpo:Place rdf:type owl:Class ;
+       
+       owl:equivalentClass <http://www.w3.org/ns/locn#Location> ;
+       
+       rdfs:comment "A location, often linked to an Address to locate it."@en ,
+                    "Un endroit, souvent lié à une Adresse pour le situer."@fr ;
+       
+       rdfs:label "Lieu"@fr ,
+                  "Place"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#Publisher
+
+ahpo:Publisher rdf:type owl:Class ;
+           
+           owl:equivalentClass <http://www.w3.org/ns/prov#Publisher> ;
+           
+           rdfs:subClassOf ahpo:Institution ;
+           
+           rdfs:comment "Organisation qui publie les travaux d’auteurs."@fr ,
+                        "Organisation wich publishes author works."@en ;
+           
+           rdfs:label "Publisher"@en ,
+                      "Éditeur"@fr .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#Report
+
+ahpo:Report rdf:type owl:Class ;
+        
+        owl:equivalentClass <http://purl.org/ontology/bibo/Report> ;
+        
+        rdfs:subClassOf ahpo:Document ;
+        
+        rdfs:comment "Text discussing about a specific subject, like a thesis."@en ,
+                     "Texte parlant d’un sujet spécifique pouvant être une thèse."@fr ;
+        
+        rdfs:label "Rapport"^^xsd:string ,
+                   "Report"@en .
+
+
+
+###  http://e-hp.ahp-numerique.fr/ahpo#Thesis
+
+ahpo:Thesis rdf:type owl:Class ;
+        
+        owl:equivalentClass <http://purl.org/ontology/bibo/Thesis> ;
+        
+        rdfs:subClassOf ahpo:Document ;
+        
+        rdfs:comment "Document created to present a research work, in order to get an academic degree."@en ,
+                     "Document créé pour présenter un travail de recherche afin d’obtenir un diplôme universitaire."@fr ;
+        
+        rdfs:label "Thesis"@en ,
+                   "Thèse"@fr .
+
+
+
+###  http://purl.org/ontology/bibo/Article
+
+<http://purl.org/ontology/bibo/Article> rdf:type owl:Class .
+
+
+
+###  http://purl.org/ontology/bibo/Book
+
+<http://purl.org/ontology/bibo/Book> rdf:type owl:Class .
+
+
+
+###  http://purl.org/ontology/bibo/Chapter
+
+<http://purl.org/ontology/bibo/Chapter> rdf:type owl:Class .
+
+
+
+###  http://purl.org/ontology/bibo/Collection
+
+<http://purl.org/ontology/bibo/Collection> rdf:type owl:Class .
+
+
+
+###  http://purl.org/ontology/bibo/Issue
+
+<http://purl.org/ontology/bibo/Issue> rdf:type owl:Class .
+
+
+
+###  http://purl.org/ontology/bibo/Journal
+
+<http://purl.org/ontology/bibo/Journal> rdf:type owl:Class .
+
+
+
+###  http://purl.org/ontology/bibo/Letter
+
+<http://purl.org/ontology/bibo/Letter> rdf:type owl:Class .
+
+
+
+###  http://purl.org/ontology/bibo/Report
+
+<http://purl.org/ontology/bibo/Report> rdf:type owl:Class .
+
+
+
+###  http://purl.org/ontology/bibo/Thesis
+
+<http://purl.org/ontology/bibo/Thesis> rdf:type owl:Class .
+
+
+
+###  http://www.w3.org/ns/locn#Address
+
+<http://www.w3.org/ns/locn#Address> rdf:type owl:Class .
+
+
+
+###  http://www.w3.org/ns/locn#Location
+
+<http://www.w3.org/ns/locn#Location> rdf:type owl:Class .
+
+
+
+###  http://www.w3.org/ns/prov#Publisher
+
+<http://www.w3.org/ns/prov#Publisher> rdf:type owl:Class .
+
+
+
+###  http://xmlns.com/foaf/0.1/Document
+
+<http://xmlns.com/foaf/0.1/Document> rdf:type owl:Class .
+
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+
+<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class .
+
+
+
+###  http://xmlns.com/foaf/0.1/Person
+
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Annotations
+#
+#################################################################
+
+
+ahpo:classificationNumber rdfs:label "cote"@fr ,
+                                 "classificationNumber"@en ;
+                      
+                      rdfs:comment "Littéral identifiant l’endroit où le document est archivé."@fr ,
+                                   "Literal identifying the place where the document is archived."@en .
+
+
+
+ahpo:publishedInReference rdfs:comment "Identifier of a published document which contains the document."@en ;
+                      
+                      rdfs:label "publiéDansLaRéférence"@fr ;
+                      
+                      rdfs:comment "Identifiant d’un document publié qui contient le document."@fr ;
+                      
+                      rdfs:label "publishedInReference"@en .
+
+
+
+
+ahpo:Article  rdfs:subClassOf  o:Item .
+ahpo:Letter  rdfs:subClassOf  o:Item .
+
+###  Generated by the OWL API (version 4.1.4.20160202-2327) https://github.com/owlcs/owlapi
+

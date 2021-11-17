@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<RTRules>
+    <prefixes>
+        <prefix URI="http://www.w3.org/1999/02/22-rdf-syntax-ns#" name="rdf:"/>
+        <prefix URI="http://www.w3.org/2000/01/rdf-schema#" name="rdfs:"/>
+    </prefixes>
+    <rules>
+    	<rule name="rdf_1" uri="http://rtrl-rules/rdf/1">
+            <context>?x ?p ?y</context>
+            <new>?p rdf:type rdf:Property</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?p is of type rdf:Property because it is 
+				used in predicate position in a triple.</explanation>
+        </rule>
+        <rule name="rdf_2" uri="http://rtrl-rules/rdf/2">
+            <context>?x ?p ?y . FILTER(isLiteral(?y))</context>
+            <new>?x ?p [rdf:type rdf:XMLLiteral]</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?y is an rdf:XMLLiteral because of 
+				the plain literal test.</explanation>
+        </rule>
+        <rule name="rdfs_1" uri="http://rtrl-rules/rdfs/1">
+            <context>?x ?p ?y . FILTER(isLiteral(?y))</context>
+            <new>?x ?p [rdf:type rdfs:Literal]</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?y is an rdfs:Literal because of
+				the plain literal test.</explanation>
+        </rule>
+        <rule name="rdfs_2" uri="http://rtrl-rules/rdfs/2">
+            <context>?p rdfs:domain ?C . ?x ?p ?y</context>
+            <new>?x rdf:type rdfs:Datatype</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?x is of type ?C because ?C is domain of ?p.</explanation>
+        </rule>
+         <rule name="rdfs_3" uri="http://rtrl-rules/rdfs/3">
+            <context>?p rdfs:range ?D . ?x ?p ?y</context>
+            <new>?y rdf:type ?D</new>
+            <cost>0.0</cost>
+            <exception>?x ?p [rdf:type rdfs:Literal]</exception>
+            <explanation>Infers that ?y is of type ?C because ?D is range of ?p.</explanation>
+        </rule>
+        <rule name="rdfs_4a" uri="http://rtrl-rules/rdfs/4a">
+            <context>?x ?p ?y</context>
+            <new>?x rdf:type rdfs:Resource</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?x is a resource because it is 
+				the subject of a triple.</explanation>
+        </rule>
+         <rule name="rdfs_4b" uri="http://rtrl-rules/rdfs/4b">
+            <context>?x ?p ?y</context>
+            <new>?y rdf:type rdfs:Resource</new>
+            <cost>0.0</cost>
+            <exception>?x ?p [rdf:type rdfs:Literal]</exception>
+            <explanation>Infers that ?y is a resource because it is the object of a triple.</explanation>
+        </rule>
+        <rule name="rdfs_5" uri="http://rtrl-rules/rdfs/5">
+            <context>?p rdfs:subPropertyOf ?q . ?q rdfs:subPropertyOf ?r</context>
+            <new>?p rdfs:subPropertyOf ?r</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?p is a sub property of ?r because 
+				?q is a sub property of ?r.</explanation>
+        </rule>
+         <rule name="rdfs_6" uri="http://rtrl-rules/rdfs/6">
+            <context>?p rdf:type rdf:Property</context>
+            <new>?p rdfs:subPropertyOf ?p</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?p is its own sub property.</explanation>
+        </rule>
+         <rule name="rdfs_7" uri="http://rtrl-rules/rdfs/7">
+            <context>?p rdfs:subPropertyOf ?q . ?x ?p ?y</context>
+            <new>?x ?q ?y</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?x is described with property ?q because
+				?p is a sub property of ?q.</explanation>
+        </rule>
+         <rule name="rdfs_8" uri="http://rtrl-rules/rdfs/8">
+            <context>?C rdf:type rdfs:Class</context>
+            <new>?C rdfs:subClassOf rdfs:Resource</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?C (so as any class) is a sub class 
+				of the Resource class.</explanation>
+        </rule>
+        <rule name="rdfs_9" uri="http://rtrl-rules/rdfs/9">
+            <context>?C rdfs:subClassOf ?D . ?x rdf:type ?C</context>
+            <new>?x rdf:type ?D</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?x is of type ?D because it is of type ?C 
+				which is a sub class of ?D.</explanation>
+        </rule>
+         <rule name="rdfs_10" uri="http://rtrl-rules/rdfs/10">
+            <context>?C rdf:type rdfs:Class</context>
+            <new>?C rdfs:subClassOf ?C</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?C is its own sub class.</explanation>
+        </rule>
+         
+        <rule name="rdfs_11" uri="http://rtrl-rules/rdfs/11">
+            <context>?C rdfs:subClassOf ?D . ?D rdfs:subClassOf ?E</context>
+            <new>?C rdfs:subClassOf ?E</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?C is a sub class of ?E because ?C is a sub class 
+				of ?D and ?D is a sub  class of ?E.</explanation>
+        </rule>  
+        <rule name="rdfs_12" uri="http://rtrl-rules/rdfs/12">
+            <context>?p rdf:type rdfs:ContainerMembershipProperty</context>
+            <new>?p rdfs:subPropertyOf rdfs:member</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?p is a sub property of the member property because
+				it is of type container membership property.</explanation>
+        </rule>
+        <rule name="rdfs_13" uri="http://rtrl-rules/rdfs/13">
+            <context>?D rdf:type rdfs:Datatype</context>
+            <new>?D rdfs:subClassOf rdfs:Literal</new>
+            <cost>0.0</cost>
+            <explanation>Infers that a type ?D is a sub class of the literal class.</explanation>
+        </rule>
+        <rule name="rdfs_ext_1" uri="http://rtrl-rules/rdfs-ext/1">
+            <context>?p rdfs:domain ?C . ?C rdfs:subClassOf ?D</context>
+            <new>?p rdfs:domain ?D</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?D is domain of ?p because its sub class ?C is.</explanation>
+        </rule>
+         <rule name="rdfs_ext_2" uri="http://rtrl-rules/rdfs-ext/2">
+            <context>?p rdfs:range ?C . ?C rdfs:subClassOf ?D</context>
+            <new>?p rdfs:range ?D</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?D is range of ?p because its sub class ?C is.</explanation>
+        </rule>
+        <rule name="rdfs_ext_3" uri="http://rtrl-rules/rdfs-ext/3">
+            <context>?q rdfs:domain ?C . ?p rdfs:subPropertyOf ?q</context>
+            <new>?p rdfs:domain ?C</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?D is domain of ?p because it is domain 
+				of ?q which is a super property of ?p.</explanation>
+        </rule>
+         <rule name="rdfs_ext_4" uri="http://rtrl-rules/rdfs-ext/4">
+            <context>?q rdfs:range ?C . ?p rdfs:subPropertyOf ?q</context>
+            <new>?p rdfs:range ?C</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?D is range of ?p because it is domain
+				of ?q which is a super property of ?p.</explanation>
+        </rule>
+        <rule name="rdfs_ext_5" uri="http://rtrl-rules/rdfs-ext/5">
+            <context>rdf:type rdfs:subPropertyOf ?p . ?p rdfs:domain ?C</context>
+            <new>rdfs:Resource rdfs:subClassOf ?C</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?C is a class above the rdfs:Resource class.</explanation>
+        </rule>
+         <rule name="rdfs_ext_6" uri="http://rtrl-rules/rdfs-ext/6">
+            <context>rdfs:subClassOf rdfs:subPropertyOf ?p . ?p rdfs:domain ?C</context>
+            <new>rdfs:Class rdfs:subClassOf ?C</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?C is a class above the rdfs:Class class.</explanation>
+        </rule>
+         <rule name="rdfs_ext_7" uri="http://rtrl-rules/rdfs-ext/7">
+            <context>rdfs:subProperty rdfs:subPropertyOf ?p . ?p rdfs:domain ?C</context>
+            <new>rdf:Property rdfs:subClassOf ?C</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?C is a class above the rdf:Property class.</explanation>
+        </rule>
+        <rule name="rdfs_ext_8" uri="http://rtrl-rules/rdfs-ext/8">
+            <context>rdfs:subClassOf rdfs:subPropertyOf ?p . ?p rdfs:range ?C</context>
+            <new>rdfs:Class rdfs:subClassOf ?C</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?C is a class above the rdfs:Class class.</explanation>
+        </rule>
+         <rule name="rdfs_ext_9" uri="http://rtrl-rules/rdfs-ext/9">
+            <context>rdfs:subProperty rdfs:subPropertyOf ?p . ?p rdfs:range ?C</context>
+            <new>rdf:Property rdfs:subClassOf ?C</new>
+            <cost>0.0</cost>
+            <explanation>Infers that ?C is a class above the rdf:Property class.</explanation>
+        </rule>
+    </rules>
+</RTRules>

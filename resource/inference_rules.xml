@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<RTRules>
+    <prefixes>
+        <prefix URI="http://e-hp.ahp-numerique.fr/ahpo#" name="ahpo:"/>
+        <prefix URI="http://xmlns.com/foaf/0.1/" name="foaf:"/>
+        <prefix URI="http://purl.org/vocab/bio/0.1/" name="bio:"/>
+        <prefix URI="http://www.w3.org/2006/time#" name="time:"/>
+        <prefix URI="http://purl.org/vocab/relationship/" name="rel:"/>
+        <prefix URI="http://dbpedia.org/ontology/" name="dbo:"/>
+    </prefixes>
+    <rules>
+        <rule name="letter_writing_date_from_reply_letter" uri="http://rtrl-rules/ahpo/1">
+            <context>?l1 ahpo:hasReply ?l2 . ?l2 ahpo:hasWritingDate ?t2</context>
+            <new>?l1 ahpo:hasWritingDate [time:before ?t2]</new>
+            <exception>?l1 ahpo:hasWritingDate ?d</exception>
+            <cost>0.0</cost>
+            <explanation>Add relation between temporal elements related to letters writing dates.</explanation>
+        </rule>
+        <rule name="letter_writing_date_from_previous_letter" uri="http://rtrl-rules/ahpo/2">
+            <context>?l1 ahpo:repliesTo ?l2 . ?l2 ahpo:hasWritingDate ?t2</context>
+            <new>?l1 ahpo:hasWritingDate [time:after ?t2]</new>
+            <exception>?l1 ahpo:hasWritingDate ?d</exception>
+            <cost>0.0</cost>
+            <explanation>Add relation between temporal elements related to letters writing dates.</explanation>
+        </rule>
+        <rule name="child_birth_date_restriction" uri="http://rtrl-rules/ahpo/3">
+            <context>?p1 rel:childOf ?p2 . ?p2 bio:birth ?d1</context>
+            <new>?p1 bio:birth [time:after ?d1]</new>
+            <exception>?p1 bio:birth ?d</exception>
+            <cost>0.0</cost>
+            <explanation>Infers that ?p1 birth date is after ?p2 birth date because ?p1 is a child of ?p2.</explanation>
+        </rule>
+        <rule name="parent_birth_date_restriction" uri="http://rtrl-rules/ahpo/4">
+            <context>?p1 rel:childOf ?p2 . ?p1 bio:birth ?d1</context>
+            <new>?p2 bio:birth [time:before ?d1]</new>
+            <exception>?p2 bio:birth ?d</exception>
+            <cost>0.0</cost>
+            <explanation>Infers that ?p2 birth date is before ?p1 birth date because ?p1 is a child of ?p2.</explanation>
+        </rule>
+        <rule name="sender_birth_date_before_letter_writing_date" uri="http://rtrl-rules/ahpo/5">
+            <context>?l ahpo:sentBy ?p . ?l ahpo:hasWritingDate ?d</context>
+            <new>?p bio:birth [time:before ?d]</new>
+            <exception>?p bio:birth ?d</exception>
+            <cost>0.0</cost>
+            <explanation>Infers that ?p birth date is before ?l writing date because ?p is the sender of ?l</explanation>
+        </rule>
+        <rule name="sender_death_date_after_letter_writing_date" uri="http://rtrl-rules/ahpo/6">
+            <context>?l ahpo:sentBy ?p . ?l ahpo:hasWritingDate ?d1</context>
+            <new>?p bio:death ?d2 . ?t time:hasBeginning ?d1 . ?t time:hasEnd "2100-01-01" . ?t time:inside ?d2</new>
+            <exception>?p bio:birth ?d</exception>
+            <cost>0.0</cost>
+            <explanation>Infers that ?p death date is after (or equals to) ?l writing date because ?p is the sender of ?l</explanation>
+        </rule>
+        <rule name="exchanges_history" uri="http://rtrl-rules/ahpo/7">
+            <context>?l1 ahpo:hasReply ?l2 . ?l2 ahpo:repliesTo ?l1</context>
+            <left>?l2 ahpo:repliesTo ?l1</left>
+            <exception>?p bio:birth ?d</exception>
+            <cost>0.0</cost>
+            <explanation>The use of the hasReply property alone is sufficient to maintain knowledge about the relationship between ?l1 and ?l2</explanation>
+        </rule>
+        <rule name="birth_property_alignment" uri="http://rtrl-rules/ahpo/8">
+            <context>?p dbo:birthDate ?b</context>
+            <left>?p dbo:birthDate ?b</left>
+            <right>?p bio:birth ?b</right>
+            <exception>?p bio:birth ?b</exception>
+            <cost>0.0</cost>
+            <explanation>Birth date should be defined using bio:birth and not dbo:birthDate property</explanation>
+        </rule>
+    </rules>
+</RTRules>
