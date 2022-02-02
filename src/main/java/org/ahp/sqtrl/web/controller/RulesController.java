@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.ahp.sqtrl.web.model.TransformationNodeEntity;
 import org.ahp.sqtrl.web.service.RuleManagerService;
+import org.ahp.sqtrlengine.exception.InvalidRuleFileException;
 import org.ahp.sqtrlengine.model.Prefix;
 import org.ahp.sqtrlengine.model.TransformationRule;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class RulesController {
 	
 	@CrossOrigin
 	@RequestMapping(value = "/rules-load", method = RequestMethod.POST, consumes = MediaType.TEXT_PLAIN_VALUE)
-	public void loadRuleFile(@RequestBody String file) {
+	public void loadRuleFile(@RequestBody String file) throws InvalidRuleFileException {
 		service.loadRuleFile(file);
 	}
 	

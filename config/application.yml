@@ -20,4 +20,4 @@ tomcat:
 custom:
     endpoint: "http://localhost:3030/HP_0510"
     ruleFile: "validRules.xml"
-    maxCost: 10.0
+    maxCost: 7.0

@@ -5,6 +5,7 @@ import java.io.File;
 import java.util.List;
 
 import org.ahp.sqtrl.web.model.TransformationNodeEntity;
+import org.ahp.sqtrlengine.exception.InvalidRuleFileException;
 import org.ahp.sqtrlengine.model.Prefix;
 import org.ahp.sqtrlengine.model.TransformationNode;
 import org.ahp.sqtrlengine.model.TransformationRule;
@@ -31,15 +32,8 @@ public class RuleManagerService implements InitializingBean {
 	private List<TransformationRule> rules;
 
 	//The default rule file is loaded, other rules files can be loaded 
-	public void afterPropertiesSet() throws Exception {
-
-		File validFile = new File(defaultRuleFile);
-
-		XMLRuleParser parser = new XMLRuleParser(validFile);
-		parser.loadXMLDocument();
-		rules = parser.parseRuleFile();
-		List<Prefix> prefixes = parser.parsePrefixes();
-		RuleUtils.replacePrefixes(rules, prefixes);
+	public void afterPropertiesSet() throws InvalidRuleFileException {
+		loadRuleFile(defaultRuleFile);
 	}
 	
 	public void initTransformationProcess(String query) {
@@ -47,19 +41,21 @@ public class RuleManagerService implements InitializingBean {
 		process.sortRules();
 	}
 
-	public void loadRuleFile(String file) {
-		// TODO Auto-generated method stub
-
+	public void loadRuleFile(String file) throws InvalidRuleFileException {
+		File validFile = new File(defaultRuleFile);
+		XMLRuleParser parser = new XMLRuleParser(validFile);
+		parser.loadXMLDocument();
+		rules = parser.parseRuleFile();
+		List<Prefix> prefixes = parser.parsePrefixes();
+		RuleUtils.replacePrefixes(rules, prefixes);
 	}
 
 	public List<Prefix> getPrefixes() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public List<TransformationRule> getRules() {
-		// TODO Auto-generated method stub
-		return null;
+		return rules;
 	}
 
 	public TransformationNodeEntity getNextNode() {
