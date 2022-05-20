@@ -59,7 +59,7 @@
 			<context></context>
 			<left>?x ?p ?y</left>
 			<right></right>
-			<cost>25.0</cost>
+			<cost>8.0</cost>
 			<explanation>Suppress the triple ?x ?p ?y</explanation>
 		</rule>
 				
@@ -84,7 +84,7 @@
 			<context></context>
 			<left>?l ahpo:sentBy ?x . ?l ahpo:citeName ?y</left>
 			<right>?l ahpo:sentBy ?y</right>
-			<cost>3.25</cost>
+			<cost>3.1</cost>
 			<explanation>Replace the sender (?x) by one of the quoted persons (?y)</explanation>
 		</rule>
 
@@ -92,7 +92,7 @@
 			<context></context>
 			<left>?l ahpo:sentTo ?x . ?l ahpo:citeName ?y</left>
 			<right>?l ahpo:sentTo ?y</right>
-			<cost>3.45</cost>
+			<cost>3.2</cost>
 			<explanation>Replace the recipient (?x) by one of the quoted persons (?y)</explanation>
 		</rule>
 

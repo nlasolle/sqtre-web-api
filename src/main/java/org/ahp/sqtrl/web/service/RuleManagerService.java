@@ -36,8 +36,9 @@ public class RuleManagerService implements InitializingBean {
 		loadRuleFile(defaultRuleFile);
 	}
 	
+	//Init a transformation process, which uses pruning to prevent full tree exploring
 	public void initTransformationProcess(String query) {
-		process = new CostBasedTransformationProcess(Double.parseDouble(defaultMaxCost), rules, query, defaultEndpoint);
+		process = new CostBasedTransformationProcess(Double.parseDouble(defaultMaxCost), rules, query, defaultEndpoint, true);
 		process.sortRules();
 	}
 
