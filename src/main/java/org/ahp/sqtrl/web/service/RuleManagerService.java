@@ -61,6 +61,9 @@ public class RuleManagerService implements InitializingBean {
 
 	public TransformationNodeEntity getNextNode() {
 		TransformationNode node = process.getNextNode();
+		
+		if(node == null) return null;
+		
 		TransformationNodeEntity nodeEntity = new TransformationNodeEntity(node);
 		return nodeEntity;
 	}

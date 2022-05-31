@@ -8,7 +8,7 @@ server:
     context-path: /sqtrl
 
 #Custom properties
-  
+
 #Tomcat specifics
 tomcat:
     accessLogEnabled: false
@@ -18,6 +18,6 @@ tomcat:
     backgroundProcessorDelay: 30 # secs
     
 custom:
-    endpoint: "http://localhost:3030/full_ahp_corpus"
+    endpoint: "http://localhost:3030/full_ahp_corpus/sparql"
     ruleFile: "validRules.xml"
     maxCost: 10.0
