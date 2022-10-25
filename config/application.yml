@@ -18,6 +18,6 @@ tomcat:
     backgroundProcessorDelay: 30 # secs
     
 custom:
-    endpoint: "http://localhost:3030/full_ahp_corpus/sparql"
+    endpoint: "http://localhost:3030/full_ahp_corpus/sparql" 
     ruleFile: "validRules.xml"
     maxCost: 10.0
